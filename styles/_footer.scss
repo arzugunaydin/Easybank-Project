@@ -1,0 +1,82 @@
+.footer{
+    background-color: $darkBlue;
+    text-align: center;
+    color:white ;
+    padding: 40px;
+    
+
+    .container{
+        
+        @include breakpoint-up (large){
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 3fr;
+            grid-template-areas:
+             "logo links1 links2 cta"
+             "social links1 links2 copyright" ;
+             justify-items: center;
+        
+        }
+    }  
+    a{
+        color: white;
+    };
+    &_logo{
+        display: inline-block;
+        
+        
+        @include breakpoint-up (large){
+            grid-area: logo;
+    
+        }
+    }  
+    &_social {
+        
+        @include breakpoint-up (large){
+            grid-area: social;
+            
+        }
+    }
+    &_links{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        
+        
+        @include breakpoint-up (large){
+            align-items:center;
+            
+
+        }
+        &.col1{
+            row-gap: 4px;
+            @include breakpoint-up (large){
+                grid-area: links1;
+            }
+
+        }
+        &.col2{
+            row-gap: 4px;
+            @include breakpoint-up (large){
+                grid-area: links2;
+            }
+        }
+
+    }
+    &_copyright{
+        
+        @include breakpoint-up (large){
+            justify-self: end;
+            align-self: end;
+            grid-area: copyright;
+            
+        } 
+    }
+    &_cta{
+        @include breakpoint-up (large){
+            justify-self: end;
+            align-self: end;
+            margin-bottom: 20px;
+        }        
+    }  
+}
